@@ -24,7 +24,10 @@ loop back to 12}
 function weapon_of_choice() {
     let choice_human = prompt("please chose roch, paper or scissors")
     let choice_human_clean = choice_human.toLowerCase();
-    if (choice_human_clean !== "rock" | choice_human_clean !== "paper" | choice_human_clean !== "scissors") {
-       weapon_of_choice() 
+    if (choice_human_clean == "rock" | choice_human_clean == "paper" | choice_human_clean == "scissors") {
+      let choice_message = "you have chosen" + choice_human_clean + ". Truely a great choice! But will it be enoth.";
+      console.log(choice_message)
+    } else {
+      weapon_of_choice()
     }
-}
+  }
