@@ -15,16 +15,7 @@ function rock_check() {
 
 rock_check();
 
-/*I need an if not and or statement in javascript*/
-
-/*pseudo code*/
-
-/*if not (choice_human_clean = "rock" or choice_human_clean = "paper" or choice_human_clean = "scissor") {
-    let choice_human = prompt("chouse rock, paper or scissors") 
-loop back to 12}
-*/
-
-/*not shure if a function inside the same function workes*/
+/*fuction if the first imput is invalid*/
 function weapon_of_choice() {
     let choice_human = prompt("please chose rock, paper or scissors");
     console.log(choice_human)
@@ -39,10 +30,46 @@ function weapon_of_choice() {
     }
   }
 
+function tie() {
+  let vicory_message = "the computer chose " + choice_human_clean +" as well. YOU HAVE TIED"
+  console.log(vicory_message)
+}
+
+function player_wins(){
+  let vicory_message = "the computer chose "+ choice_computer +". YOU ARE WINNER !"
+  console.log(vicory_message)
+}
+
+function player_loses(){
+  let vicory_message = "the computer chose "+ choice_computer +". ALL YOUR BASE ARE BELONG TO US."
+  console.log(vicory_message)
+}
+
   /*assigning the randome number rock, paper, scissors*/
 if (choice_number_computer < 0.3) {
   const choice_computer = "rock"
+  if (choice_human_clean == "rock") {
+    tie
+  } if (choice_human_clean == "paper") {
+    player_wins
+  } if (choice_human_clean == "scissors") {
+    player_loses
+  }
 } else if (choice_number_computer >0.6) {
   const choice_computer = "paper"
+  if (choice_human_clean == "paper") {
+    tie
+  } if (choice_human_clean == "scissors") {
+    player_wins
+  } if (choice_human_clean == "paper") {
+    player_loses
+  }
 } else { const choice_computer = "scissors"
+if (choice_human_clean == "scissors") {
+  tie
+} if (choice_human_clean == "rock") {
+  player_wins
+} if (choice_human_clean == "paper") {
+  player_loses
+}
 }
