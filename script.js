@@ -30,6 +30,8 @@ function weapon_of_choice() {
     }
   }
 
+let choice_computer = " "
+
 function tie() {
   let vicory_message = "the computer chose " + choice_human_clean +" as well. YOU HAVE TIED"
   console.log(vicory_message)
@@ -45,31 +47,37 @@ function player_loses(){
   console.log(vicory_message)
 }
 
-  /*assigning the randome number rock, paper, scissors*/
+  /*assigning the randome number rock, paper, scissors as well as the victory condition logic*/
 if (choice_number_computer < 0.3) {
-  const choice_computer = "rock"
+  choice_computer = "rock"
   if (choice_human_clean == "rock") {
-    tie
-  } if (choice_human_clean == "paper") {
-    player_wins
-  } if (choice_human_clean == "scissors") {
-    player_loses
+    tie();
+  } else if (choice_human_clean == "paper") {
+    player_wins();
+  } else if (choice_human_clean == "scissors") {
+    player_loses();
+  } else {
+    console.log(choice_computer)
   }
 } else if (choice_number_computer >0.6) {
-  const choice_computer = "paper"
+  choice_computer = "paper"
   if (choice_human_clean == "paper") {
-    tie
-  } if (choice_human_clean == "scissors") {
+    tie();
+  } else if (choice_human_clean == "scissors") {
     player_wins
-  } if (choice_human_clean == "paper") {
-    player_loses
+  }else if (choice_human_clean == "rock") {
+    player_loses();
+  } else {
+    console.log(choice_computer)
   }
-} else { const choice_computer = "scissors"
-if (choice_human_clean == "scissors") {
-  tie
-} if (choice_human_clean == "rock") {
-  player_wins
-} if (choice_human_clean == "paper") {
-  player_loses
-}
+} else { 
+  choice_computer = "scissors"
+  if (choice_human_clean == "scissors") {
+  tie();
+  } else if (choice_human_clean == "rock") {
+  player_wins();
+  } else if (choice_human_clean == "paper") {
+  player_loses();
+  } else {console.log(choice_computer)
+  }
 }
