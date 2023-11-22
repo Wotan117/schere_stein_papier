@@ -1,4 +1,9 @@
 /*function is working but i must work in the return function to retrieve the point count ot of the game function*/
+
+let choice_computer = " "
+let points_computer = 0
+let points_human = 0
+
 function game(){
 
   const choice_number_computer = Math.random();
@@ -33,16 +38,13 @@ function game(){
     }
   }
 
-  let choice_computer = " "
-  let points_computer = 0
-  let points_human = 0
-
   function tie() {
     let vicory_message = "the computer chose " + choice_human_clean +" as well. YOU HAVE TIED"
     points_computer++
     points_human++
     console.log(points_computer)
     console.log(vicory_message)
+    return [points_computer, points_human];
   }
 
   function player_wins(){
@@ -50,6 +52,7 @@ function game(){
     points_human++
     console.log(points_computer)
     console.log(vicory_message)
+    return [points_computer, points_human];
   }
 
   function player_loses(){
@@ -57,6 +60,7 @@ function game(){
     points_computer++
     console.log(points_computer)
     console.log(vicory_message)
+    return [points_computer, points_human];
   }
 
   /*assigning the randome number rock, paper, scissors as well as the victory condition logic*/
