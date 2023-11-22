@@ -1,5 +1,4 @@
-/*function is working but i must work in the return function to retrieve the point count ot of the game function*/
-
+/*defining the counting variables*/
 let choice_computer = " "
 let points_computer = 0
 let points_human = 0
@@ -7,7 +6,6 @@ let points_human = 0
 function game(){
 
   const choice_number_computer = Math.random();
-  console.log(choice_number_computer)
 
   let choice_human = prompt("chose your weapon")
   let choice_human_clean = choice_human.toLowerCase();
@@ -42,7 +40,6 @@ function game(){
     let vicory_message = "the computer chose " + choice_human_clean +" as well. YOU HAVE TIED"
     points_computer++
     points_human++
-    console.log(points_computer)
     console.log(vicory_message)
     return [points_computer, points_human];
   }
@@ -50,7 +47,6 @@ function game(){
   function player_wins(){
     let vicory_message = "the computer chose "+ choice_computer +". YOU ARE WINNER !"
     points_human++
-    console.log(points_computer)
     console.log(vicory_message)
     return [points_computer, points_human];
   }
@@ -58,7 +54,6 @@ function game(){
   function player_loses(){
     let vicory_message = "the computer chose "+ choice_computer +". ALL YOUR BASE ARE BELONG TO US."
     points_computer++
-    console.log(points_computer)
     console.log(vicory_message)
     return [points_computer, points_human];
   }
@@ -100,9 +95,24 @@ function game(){
 }
 
 
+/*maybe I should add a question to ask for how many round the game should be played?*/
+
+/*function to defince the number of rounds*/
 for (let i = 0; i < 5; i++) {
   game();
 }
 
-console.log(points_computer)
-console.log(points_human)
+
+/*victory message logic and output*/
+let final_message = " "
+
+if (points_human > points_computer) {
+  final_message = "the Player won with "+ points_human +" points against the computers "+ points_computer+" points"
+  console.log()
+} else if (points_computer > points_human) {
+  final_message = "the computer won with "+ points_computer +" points against the players "+ points_human+" points"
+} else {
+  final_message = "its a tie"
+}
+
+console.log(final_message)
